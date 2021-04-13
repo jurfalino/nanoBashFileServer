@@ -26,9 +26,10 @@ do
           DATA=""
         elif echo "$REQUEST" | grep -qE '^quoteImport.url' # if line starts with "GET /"
         then
-          DATA=$(cat /opt/setup/guru/application.properties | grep "^quoteImport.url" | cut -d '=' -f2)
+          DATA=$(cat /..path../application.properties | grep "^paramName" | cut -d '=' -f2)
+          #additional custom processing
         else
-          DATA=$(cat /opt/setup/guru/application.properties | grep "^${REQUEST:1}" | cut -d '=' -f2)     
+          DATA=$(cat /..path../application.properties | grep "^${REQUEST:1}" | cut -d '=' -f2)     
         fi  
 
         HDATA="<html><head></head><body>${DATA}</body></html>"
